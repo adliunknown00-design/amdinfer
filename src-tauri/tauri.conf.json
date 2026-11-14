@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "AmdInfer",
+  "version": "0.1.0",
+  "identifier": "app.amdinfer.local",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:3030",
+    "beforeBuildCommand": "npm run build:web",
+    "frontendDist": "../public"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "AmdInfer — Local AMD AI",
+        "width": 1180,
+        "height": 780,
+        "minWidth": 760,
+        "minHeight": 560,
+        "center": true,
+        "decorations": true,
+        "resizable": true
+      }
+    ],
+    "security": { "csp": "default-src 'self' ipc: http://127.0.0.1:3030 http://localhost:3030; connect-src 'self' ipc: http://127.0.0.1:3030 http://localhost:3030 http://127.0.0.1:8080; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; script-src 'self' 'unsafe-inline'" }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "icon": ["icons/icon.png", "icons/icon.ico"],
+    "externalBin": [],
+    "resources": ["../dist/amdinfer-service.exe"]
+  }
+}

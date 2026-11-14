@@ -1,0 +1,10 @@
+{
+  "name": "amdinfer",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local GGUF chat app using llama.cpp HIP/ROCm",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js", "build:service": "node scripts/build-service.js", "tauri": "tauri", "build:web": "node --check server.js", "tauri:build": "npm run build:service && tauri build" },
+  "devDependencies": { "@tauri-apps/cli": "^2.0.0", "@yao-pkg/pkg": "^6.25.0" },
+  "engines": { "node": ">=20" }
+}
